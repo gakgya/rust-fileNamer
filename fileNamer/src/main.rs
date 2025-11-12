@@ -16,11 +16,21 @@ fn main() {
             let old_name = path.file_name().unwrap().to_string_lossy().to_string();
             let new_name = transform_name(&old_name);
 
-            println!("{} -> {}", old_name, new_name); // dry-run 출력
+            println!("{} -> {}", old_name, new_name);
         }
     }
 }
 
+
 fn transform_name(name: &str) -> String {
-    name.replace(" ", "_")
+   
+    let mut new_name = name.to_string();
+
+    new_name = new_name.replace(" ", "_");
+
+    new_name = new_name.to_lowercase();
+
+    new_name = format!("renamed_{}", new_name);
+
+    new_name
 }
