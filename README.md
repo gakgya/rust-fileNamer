@@ -10,6 +10,7 @@ Rust로 제작한 파일명 정리/변환 CLI 도구입니다.
 
 ## 기능
 ### 기본 실행
+//디렉토리 따옴표로 감싸기 필요
 ```
 <directory> <option>
 ```
@@ -49,7 +50,7 @@ target/release/fileNamer.exe
 이 파일을 더블클릭하면 인터랙티브 모드로 실행됩니다.
 예시(프로그램에 입력):
 ```
-C:\images --lowercase --prefix sample_
+"C:\images" --lowercase --prefix sample_
 ```
 ### CMD 또는 PowerShell에서 직접 실행
 ```
@@ -57,7 +58,7 @@ fileNamer.exe <폴더경로> [옵션들...]
 ```
 예시
 ```
-fileNamer.exe test --prefix new_ --lowercase --dry-run
+fileNamer.exe "test" --prefix new_ --lowercase --dry-run
 ```
 
 ## 테스트 파일 자동 생성 (BAT 스크립트)
@@ -71,7 +72,7 @@ init_test_files.bat 실행 시 아래 작업을 수행합니다:
 ## 테스트 명령어 예시
 ### Dry-run 미리보기
 ```
-fileNamer.exe test --lowercase --prefix sample_ --dry-run
+fileNamer.exe "test" --lowercase --prefix sample_ --dry-run
 ```
 ### 실제 적용 (dry-run 실행 후 y 입력)
 ```
@@ -80,12 +81,12 @@ Apply changes? (y/n): y
 ```
 ### replace 옵션 테스트
 ```
-fileNamer.exe test --replace " " "_" --prefix new_ --dry-run
+fileNamer.exe "test" --replace " " "_" --prefix new_ --dry-run
 
 ```
 ### 하위 폴더 포함 전체 처리
 ```
-fileNamer.exe test --recursive --lowercase --dry-run
+fileNamer.exe "test" --recursive --lowercase --dry-run
 
 ```
 
