@@ -98,6 +98,8 @@ cargo build --release
 ```
 target/release/fileNamer.exe
 ```
+### 실행영상
+https://youtu.be/lobCC9b6y88
 ### 주의사항
 - Windows CMD, PowerShell 지원
 - 파일명 충돌 시 자동 번호 추가
